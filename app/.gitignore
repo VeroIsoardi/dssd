@@ -1,3 +1,4 @@
+
 /src-providedGroovy
 /h2_database
 /process_configurations
@@ -16,3 +17,14 @@
 
 #only used as user preferences
 /database_connectors_properties
+
+
+bin
+.classpath
+.settings
+target/
+.flattened-pom.xml
+dependency-reduced-pom.xml
+pom.xml.versionsBackup
+node/
+node_modules/
