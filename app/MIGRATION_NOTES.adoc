@@ -1,0 +1,7 @@
+== Migration notes (September 10, 2025 at 1:04:41 AM ART)
+
+=== Updates
+
+* Bonita project parent has been updated from `9.0.0` to `10.2.0`.
+* Required Java version updated to `17`. Make sure that your third party dependencies are compliant with Java 17.
+
