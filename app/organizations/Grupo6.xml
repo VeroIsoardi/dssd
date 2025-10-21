@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ASCII"?>
+<organization:Organization xmlns:organization="http://documentation.bonitasoft.com/organization-xml-schema/1.1">
+  <customUserInfoDefinitions/>
+  <users>
+    <user userName="smakcimovich">
+      <firstName>Santiago</firstName>
+      <lastName>Makcimovich</lastName>
+      <manager></manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="gginestet">
+      <firstName>Gaston</firstName>
+      <lastName>Ginestet</lastName>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="visoardi">
+      <firstName>Ver&#xf3;nica</firstName>
+      <lastName>Isoardi</lastName>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+  </users>
+  <roles>
+    <role name="Admin">
+      <displayName>Admin</displayName>
+    </role>
+  </roles>
+  <groups>
+    <group name="Group6">
+      <displayName>Grupo6</displayName>
+    </group>
+    <group name="Devs" parentPath="/Group6">
+      <displayName>Devs</displayName>
+    </group>
+  </groups>
+  <memberships>
+    <membership>
+      <userName>smakcimovich</userName>
+      <roleName>Admin</roleName>
+      <groupName>Group6</groupName>
+    </membership>
+    <membership>
+      <userName>gginestet</userName>
+      <roleName>Admin</roleName>
+      <groupName>Group6</groupName>
+    </membership>
+    <membership>
+      <userName>visoardi</userName>
+      <roleName>Admin</roleName>
+      <groupName>Group6</groupName>
+    </membership>
+  </memberships>
+</organization:Organization>
