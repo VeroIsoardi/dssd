@@ -23,11 +23,13 @@ public class Index extends AbstractIndex {
     private static final Logger LOGGER = LoggerFactory.getLogger(Index.class.getName());
     private static final String PAGE_PARAM = "page";
     private static final String LIMIT_PARAM = "limit";
+    private static final String PROJECT_ID_PARAM = "projectId";
     private static final String API_BASE_URL = "https://dssd-api.makitech.com.ar/api/v1";
 
     // Thread-safe storage for request-scoped parameters
     private static final ThreadLocal<Integer> PAGE = new ThreadLocal<>();
     private static final ThreadLocal<Integer> LIMIT = new ThreadLocal<>();
+    private static final ThreadLocal<String> PROJECT_ID = new ThreadLocal<>();
     private static final ThreadLocal<String> EMAIL = new ThreadLocal<>();
     private static final ThreadLocal<String> PASSWORD = new ThreadLocal<>();
 
@@ -41,6 +43,7 @@ public class Index extends AbstractIndex {
         // Params are optional and independent: if provided and valid (>0 integers), store them; otherwise ignore.
         final String pageRaw = request.getParameter(PAGE_PARAM);
         final String limitRaw = request.getParameter(LIMIT_PARAM);
+        final String projectIdRaw = request.getParameter(PROJECT_ID_PARAM);
 
         if (pageRaw != null) {
             try {
@@ -62,6 +65,10 @@ public class Index extends AbstractIndex {
             } catch (NumberFormatException ex) {
                 // ignore invalid value
             }
+        }
+
+        if (projectIdRaw != null && !projectIdRaw.isBlank()) {
+            PROJECT_ID.set(projectIdRaw);
         }
 
         // Read email and password from request body
@@ -162,6 +169,11 @@ public class Index extends AbstractIndex {
 
         Integer page = PAGE.get();
         Integer limit = LIMIT.get();
+        String projectId = PROJECT_ID.get();
+        LOGGER.info("Page: {}", page);
+        LOGGER.info("Limit: {}", limit);
+        LOGGER.info("Project ID: {}", projectId);
+
         
         try {
             StringBuilder url = new StringBuilder(API_BASE_URL + "/tasks");
@@ -170,9 +182,19 @@ public class Index extends AbstractIndex {
                 url.append(sep).append("page=").append(page);
                 sep = "&";
             }
+            
+
             if (limit != null) {
                 url.append(sep).append("limit=").append(limit);
+                sep = "&";
             }
+
+
+
+            if (projectId != null && !projectId.isBlank()) {
+                url.append(sep).append("projectId=").append(projectId);
+            }
+
             URI uri = URI.create(url.toString());
 
             HttpClient client = HttpClient.newBuilder()
