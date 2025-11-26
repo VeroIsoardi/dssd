@@ -25,6 +25,7 @@
   </build>
   <modules>
     <module>ApiCloud</module>
+    <module>AssignTask</module>
     
   </modules>
 </project>
