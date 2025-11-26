@@ -105,6 +105,18 @@
       <artifactId>bonita-connector-email</artifactId>
       <version>1.5.0</version>
     </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>FinishTask</artifactId>
+      <version>${project.version}</version>
+      <type>zip</type>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>CountPendingTaskByProjectId</artifactId>
+      <version>${project.version}</version>
+      <type>zip</type>
+    </dependency>
     <!-- <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>AssignTask</artifactId>
