@@ -117,6 +117,12 @@
       <version>${project.version}</version>
       <type>zip</type>
     </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>CountUntakenTasksByProjectId</artifactId>
+      <version>${project.version}</version>
+      <type>zip</type>
+    </dependency>
     <!-- <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>AssignTask</artifactId>

@@ -27,5 +27,6 @@
     <module>AssignTask</module>
     <module>FinishTask</module>
     <module>CountPendingTaskByProjectId</module>
+    <module>CountUntakenTasksByProjectId</module>
   </modules>
 </project>
