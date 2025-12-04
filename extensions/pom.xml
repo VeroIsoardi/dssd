@@ -29,5 +29,6 @@
     <module>CountPendingTaskByProjectId</module>
     <module>CountUntakenTasksByProjectId</module>
     <module>ListTasksByUser</module>
+    <module>GetTasksKpis</module>
   </modules>
 </project>
